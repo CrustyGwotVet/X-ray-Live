@@ -1,1 +1,71 @@
 
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>X-Ray Live</title>
+
+  <style>
+
+    body {
+
+      background: #101820;
+
+      color: white;
+
+      text-align: center;
+
+      font-family: Arial;
+
+      padding: 60px 15px;
+
+    }
+
+    button {
+
+      background: #d6aa66;
+
+      padding: 18px 30px;
+
+      font-size: 18px;
+
+      border: none;
+
+      border-radius: 8px;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>X-RAY LIVE</h1>
+
+  <p id="status">SYSTEM STANDBY</p>
+
+  <button id="deploy">DEPLOY X-RAY</button>
+
+  <script>
+
+    document.getElementById("deploy").onclick = function() {
+
+      document.getElementById("status").textContent =
+
+        "DEPLOYMENT SUCCESSFUL";
+
+      this.textContent = "X-RAY ONLINE";
+
+    };
+
+  </script>
+
+</body>
+
+</html>
