@@ -1,71 +1,119 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0a131b"><title>X-RAY // Living Battlefield</title><style>
+:root{color-scheme:dark;--gold:#e9bc80;--ink:#0c161f;--text:#e0e8e8;--muted:#9caeb6;--border:#3b515c}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#080f15;color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{overflow-x:hidden}.shell{max-width:1100px;margin:auto;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}.mast{padding:14px 16px 11px;background:linear-gradient(140deg,#182c39,#0c151e);display:flex;align-items:center;justify-content:space-between;gap:9px;border-bottom:1px solid #38515c}.mast small{font-size:9px;letter-spacing:.18em;color:#b9c5c7}.mast h1{font-size:22px;letter-spacing:.07em;color:var(--gold);margin:3px 0 0;line-height:1.1}.chip{border:1px solid #54636a;color:#d4c2aa;background:#17232d;padding:6px 8px;border-radius:4px;font-size:10px;letter-spacing:.05em;text-align:right}.viewport{position:relative;height:clamp(345px,55vh,620px);overflow:hidden;background:radial-gradient(ellipse at 50% 15%,#4b5b63 0%,#24333d 40%,#0b1721 90%);border-bottom:1px solid #43545b;touch-action:none}canvas{display:block;width:100%;height:100%;touch-action:none}#err{display:none;position:absolute;inset:25px;background:#101b23ea;color:#f0d3bb;padding:18px;z-index:9;align-content:center;line-height:1.6}.headup{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:5px;pointer-events:none}.pill{background:#06141ed6;border:1px solid #475662;border-radius:3px;padding:7px 9px;font-size:10px;letter-spacing:.06em;color:#d0e0e8;width:max-content;max-width:calc(100vw - 24px)}.pill b{color:#f0c794}.camctrl{position:absolute;bottom:10px;right:10px;display:flex;gap:6px}.camctrl button{border:1px solid #61737b;background:#0b202acb;color:white;border-radius:7px;min-width:37px;height:37px;font-size:15px}.screenmsg{position:absolute;inset:0;z-index:4;background:linear-gradient(180deg,#07131bea 0%,#0a1720db 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}.screenmsg h2{font-size:29px;letter-spacing:.1em;margin:5px 0;color:#eac18b}.screenmsg p{max-width:340px;font-size:13px;line-height:1.7;color:#c2cdd1}.screenmsg .eyebrow{color:#eabc81;font-size:10px;letter-spacing:.23em}.primary{background:#e7bb82!important;color:#101c26!important;border:0!important;font-weight:900!important}.screenmsg button{padding:14px 27px;margin-top:8px;font-size:14px}.camlabel{position:absolute;bottom:12px;left:13px;font-size:10px;color:#d4e2e5;background:#0c1b23c2;border:1px solid #405764;padding:6px 9px;border-radius:4px;pointer-events:none}.labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}.nametag{position:absolute;transform:translate(-50%,-100%);font-size:10px;font-weight:800;text-shadow:0 1px 3px #000;white-space:nowrap;background:#081c29c9;padding:3px 5px;border-radius:2px;color:#b9e7f7;border-bottom:2px solid #75b5cf}.nametag.enemy{color:#ffd1b7;border-color:#db866e}.nametag.down{color:#f9b16b;border-color:#dc8e66}.bottom{background:#0a141d;padding:10px 12px 25px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.stat{background:#172731;border:1px solid #344b56;border-radius:6px;text-align:center;padding:10px 3px}.stat strong{font-size:18px;display:block}.stat span{font-size:9px;letter-spacing:.05em;color:#aec0c6}.panel{border:1px solid #38515d;background:linear-gradient(170deg,#142632,#0f1c26);border-radius:8px;padding:13px;margin-top:9px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.row strong{font-size:12px;letter-spacing:.05em}.state{font-size:10px;letter-spacing:.09em;color:#f3bf82}.bodytext{font-size:13px;line-height:1.65;color:#cfdadd;margin:10px 0}.entry{font-size:12px;line-height:1.55;padding:6px 0;border-bottom:1px solid #2b414b;color:#c0d1d8}.entry .time{color:#e5ba82;font-family:monospace;margin-right:7px}.log{max-height:185px;overflow:auto}.actions{display:flex;gap:7px;margin-top:10px}.actions input{min-width:0;flex:1;border-radius:6px;background:#0b1923;color:white;padding:12px 10px;border:1px solid #5a7381;font:14px ui-sans-serif,system-ui}.actions button{background:#eac28c;color:#0b1820;border:none;border-radius:6px;font-weight:900;padding:0 15px}.actions input:disabled,.actions button:disabled{opacity:.43}.hints{font-size:11px;color:#95a9b2;margin-top:9px;line-height:1.6}.smallbtn{background:#1d3643;color:#c8dfe6;border:1px solid #4a6875;border-radius:5px;padding:8px 10px;font-weight:700;font-size:11px}.tiny{font-size:10px;color:#a0b1b8}.hide{display:none!important}@media(min-width:700px){.bottom{display:grid;grid-template-columns:1.06fr .94fr;gap:10px}.stats{grid-column:1/-1}.panel{margin-top:0}.viewport{height:min(65vh,650px)}}
+</style></head><body><main class="shell" id="app"><header class="mast"><div><small>COG // TACTICAL SIMULATION · NON-CANON</small><h1>GEARS / X-RAY</h1></div><div class="chip" id="headerClock">DAY 66 · FIELD TEST<br>06:12:00</div></header><div class="viewport" id="view"><canvas id="world"></canvas><div class="labels" id="labels"></div><div class="headup"><div class="pill" id="contact">● SECTOR QUIET</div><div class="pill"><b>VIEW:</b> <span id="cameraMode">TACTICAL 3D</span></div></div><div class="camlabel" id="camtip">Drag to rotate · +/− to zoom</div><div class="camctrl"><button id="camSwap" title="Switch camera">◉</button><button id="zoomOut" title="Zoom out">−</button><button id="zoomIn" title="Zoom in">＋</button></div><div id="err"></div><div class="screenmsg" id="intro"><div class="eyebrow">PROJECT X-RAY · PROOF OF CONCEPT</div><h2>RUINED AVENUE</h2><p>Thomas approaches a contested intersection with Cade, Sayers, and Reddick. Squadmates and Locust act independently. Observe, decide, and survive.</p><p style="color:#eac18d">Real 3D rendering · Non-canon test encounter</p><button class="primary" id="deploy">DEPLOY X-RAY</button></div></div><div class="bottom"><div class="stats"><div class="stat"><strong id="hp">20/20</strong><span>THOMAS HP</span></div><div class="stat"><strong id="ammo">60/240</strong><span>RETRO AMMO</span></div><div class="stat"><strong id="stress">3/10</strong><span>STRESS</span></div><div class="stat"><strong id="foes">?</strong><span>LOCUST</span></div></div><section class="panel"><div class="row"><strong id="heading">AWAITING DEPLOYMENT</strong><span class="state" id="state">STANDBY</span></div><p class="bodytext" id="situation">Tap DEPLOY X-RAY. The battlefield will advance until Thomas must make a decision.</p><form class="actions" id="orders"><input id="command" autocomplete="off" enterkeyhint="send" placeholder="What does Thomas do?" aria-label="Thomas action" disabled><button id="submit" type="submit" disabled>ACT</button></form><div class="hints">Try: “fire at Drone B”, “suppress the Grenadier”, “move to cover”, “reload”, “hold position”, or “help Sayers”. This prototype understands a limited set of actions.</div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px"><button class="smallbtn" id="observe">OBSERVE</button><button class="smallbtn" id="mute">SOUND: OFF</button><button class="smallbtn" id="reset">RESET TEST</button></div></section><section class="panel"><div class="row"><strong>FIELD RADIO / DICE LOG</strong><span class="tiny" id="round">ROUND 0</span></div><div class="log" id="log"></div></section></div></main>
+<script>
+(()=>{'use strict';const $=id=>document.getElementById(id);
+function fallback(){
+ const cv=$('world'),g=cv.getContext('2d');
+ if(!g){$('err').style.display='grid';$('err').textContent='Canvas rendering is not supported in this browser.';return;}
+ let units=[],tm=0,lt=0,ai=0,decisionAt=0,contact=false,paused=true,started=false,done=false,round=0,zoom=1,orbit=-.47,closer=false,logs=[];
+ const mk=(name,team,x,y)=>({name,team,x,y,tx:x,ty:y,hp:20,ammo:60,res:240,down:false,dead:false});const dice=n=>1+Math.floor(Math.random()*n);const living=t=>units.filter(u=>u.team===t&&!u.dead&&!u.down);const clock=()=>{let s=22320+Math.floor(tm);return [Math.floor(s/3600),Math.floor(s/60)%60,s%60].map(x=>String(x).padStart(2,'0')).join(':')};
+ const note=t=>{logs.unshift([clock(),t]);$('log').innerHTML=logs.slice(0,13).map(e=>'<div class="entry"><span class="time">'+e[0]+'</span>'+e[1]+'</div>').join('');};
+ function refresh(){$('headerClock').innerHTML='FIELD TEST · '+(contact?'CONTACT':'PATROL')+'<br>'+clock();$('hp').textContent=units[0].hp+'/20';$('ammo').textContent=units[0].ammo+'/'+units[0].res;$('foes').textContent=contact?living('locust').length:'?';$('state').textContent=done?'COMPLETE':paused?'PAUSED':'LIVE';$('contact').textContent=contact?'● CONTACT':'● PATROL';$('cameraMode').textContent=closer?'CLOSE CAMERA':'TACTICAL VIEW';$('round').textContent='DECISIONS '+round;}
+ function reset(){units=[mk('THOMAS','cog',-13,-2),mk('CADE','cog',-15,2),mk('SAYERS','cog',-10,3),mk('REDDICK','cog',-15,-4),mk('DRONE A','locust',9,-2),mk('DRONE B','locust',11,2),mk('DRONE C','locust',14,-4),mk('GRENADIER','locust',15,4)];tm=0;ai=0;decisionAt=0;contact=false;paused=true;started=false;done=false;round=0;logs=[];$('intro').classList.remove('hide');$('heading').textContent='AWAITING DEPLOYMENT';$('situation').textContent='Tap DEPLOY X-RAY to start the field test.';$('command').disabled=true;$('submit').disabled=true;note('FALLBACK GRAPHICS MODE ACTIVE — no WebGL available.');refresh();}
+ function pause(){paused=true;$('heading').textContent='THOMAS · DECISION REQUIRED';$('situation').textContent='Locust fire is coming from beyond the barricade. What does Thomas do?';$('command').disabled=false;$('submit').disabled=false;refresh();}
+ function shot(a,b,suppress=false){if(!b)return;if(a.ammo<3){note(a.name+' needs a magazine.');return;}a.ammo-=3;let r=dice(20),dc=14,success=r+3>=dc;if(suppress){note(a.name+' suppresses '+b.name+'.');return;}if(success){let damage=Math.max(1,dice(8));b.hp=Math.max(0,b.hp-damage);note(a.name+' hits '+b.name+' for '+damage+' ['+r+'+3 vs 14].');if(!b.hp){b.down=true;note(b.name+' DOWN.');}}else note(a.name+' misses '+b.name+' ['+r+'+3 vs 14].');}
+ function enemy(a){let t=a.team==='cog'?'locust':'cog';return living(t).sort((x,y)=>Math.hypot(a.x-x.x,a.y-x.y)-Math.hypot(a.x-y.x,a.y-y.y))[0];}
+ function act(t){if(!paused||!started||done)return;let v=t.toLowerCase(),u=units[0],e=living('locust').find(a=>v.includes(a.name.toLowerCase()))||living('locust')[0];
+ if(/fire|shoot|attack|burst|engage/.test(v))shot(u,e);
+ else if(/suppress|pin/.test(v))shot(u,e,true);
+ else if(/reload|mag/.test(v)){let n=Math.min(60-u.ammo,u.res);u.ammo+=n;u.res-=n;note('Thomas reloads '+n+' rounds.');}
+ else if(/cover|duck|advance|move|retreat|withdraw/.test(v)){u.tx=-8;u.ty=-2;note('Thomas moves to cover.');}
+ else if(/aid|medic|help|treat/.test(v)){note('Thomas checks squad casualties.');}
+ else if(/hold|wait|observe|scan|watch/.test(v)){note('Thomas scans the avenue.');}
+ else if(/shout|say|radio|tell|call/.test(v)){note('Thomas radios X-Ray: '+t.replace(/[<>]/g,'').slice(0,90));}
+ else{$('situation').textContent='Prototype commands: fire, suppress, reload, cover, aid, observe, or radio.';return;}
+ round++;paused=false;decisionAt=tm+5;$('command').disabled=true;$('submit').disabled=true;$('command').value='';$('heading').textContent='CONTACT · SIMULATION ACTIVE';$('situation').textContent='The squad and Locust act independently.';refresh();}
+ $('deploy').addEventListener('click',()=>{started=true;paused=false;$('intro').classList.add('hide');$('heading').textContent='X-RAY ADVANCING';$('situation').textContent='Squad moving toward the ruined avenue.';note('CADE: "Watch those windows, keep spacing!"');});$('orders').addEventListener('submit',e=>{e.preventDefault();act($('command').value);});$('observe').addEventListener('click',()=>{if(started)paused?act('observe'):pause();});$('reset').addEventListener('click',reset);$('camSwap').addEventListener('click',()=>{closer=!closer;});$('zoomIn').addEventListener('click',()=>zoom=Math.max(.55,zoom-.15));$('zoomOut').addEventListener('click',()=>zoom=Math.min(2.5,zoom+.15));let p=null;cv.addEventListener('pointerdown',e=>p=e.clientX);cv.addEventListener('pointermove',e=>{if(p!==null){orbit+=(e.clientX-p)*.004;p=e.clientX;}});cv.addEventListener('pointerup',()=>p=null);cv.addEventListener('pointercancel',()=>p=null);
+ function tick(dt){if(!started||paused||done)return;tm+=dt;for(let u of units){let dx=u.tx-u.x,dy=u.ty-u.y,d=Math.hypot(dx,dy);if(d>.02){let m=Math.min(d,dt*1.7);u.x+=dx/d*m;u.y+=dy/d*m;}}
+ if(!contact&&tm>2.5){contact=true;note('LOCUST CONTACT! HAMMERBURSTS AHEAD.');note('CADE: "X-RAY! TAKE COVER!"');pause();return;}
+ if(contact&&tm-ai>=1.5){ai=tm;for(let u of units){if(u.name==='THOMAS'||u.down)continue;let e=enemy(u);if(e&&Math.random()<.73)shot(u,e);if(Math.random()<.25){u.tx=u.x+(u.team==='cog'?1:-1)*1.5;u.ty=u.y+(Math.random()-.5)*2;}}
+ if(!living('locust').length||units[0].down){done=true;paused=true;$('heading').textContent='ENCOUNTER ENDED';$('situation').textContent=units[0].down?'Thomas incapacitated.':'X-Ray secures the avenue.';}}
+ if(contact&&tm>=decisionAt)pause();refresh();}
+ const cover=[[-11,-3,4,2,2],[-4,2,4,1.5,2],[7,-3,3,2,1.8],[13,2,4,1.5,2]];
+ function draw(){let W=cv.clientWidth,H=cv.clientHeight,dpr=Math.min(2,devicePixelRatio||1);if(cv.width!==Math.round(W*dpr)||cv.height!==Math.round(H*dpr)){cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);}g.setTransform(dpr,0,0,dpr,0,0);let sky=g.createLinearGradient(0,0,0,H);sky.addColorStop(0,'#62717a');sky.addColorStop(.5,'#283e4d');sky.addColorStop(1,'#101f2b');g.fillStyle=sky;g.fillRect(0,0,W,H);
+ let sz=Math.min(W/34,H/29)/zoom*(closer?1.5:1),ox=W*.5+(closer?W*.23:0),oy=H*.59;function P(x,y,z=0){let ca=Math.cos(orbit),sa=Math.sin(orbit);return [ox+(x*ca-y*sa)*sz,oy+(x*sa+y*ca)*sz*.56-z*sz];}let polys=[];function poly(points,c,depth){polys.push({points,c,depth});}function cube(x,y,w,d,h,c){let xx=x-w/2,XX=x+w/2,yy=y-d/2,YY=y+d/2;let A=[xx,yy,0],B=[XX,yy,0],C=[XX,YY,0],D=[xx,YY,0],E=[xx,yy,h],F=[XX,yy,h],G=[XX,YY,h],K=[xx,YY,h];const projected=vs=>vs.map(v=>P(...v));let dep=x*Math.sin(orbit)+y*Math.cos(orbit);poly(projected([A,B,F,E]),'#43565c',dep+.05);poly(projected([B,C,G,F]),'#344951',dep+.08);poly(projected([E,F,G,K]),c,dep+.1);}
+ poly([P(-22,-12),P(23,-12),P(23,12),P(-22,12)],'#3f484c',-500);for(let i=-18;i<21;i+=5)poly([P(i,-.3,.05),P(i+1.8,-.3,.05),P(i+1.8,.0,.05),P(i,.0,.05)],'#a89b72',-499);
+ for(let x of [-20,-4,14]){cube(x,-11.7,10,3,4.2,'#717575');cube(x,12,9,3,5.5,'#798182');}
+ for(let i=0;i<24;i++){let x=(i*13%40)-19,y=(i*7%18)-9;if(Math.abs(y)<2)continue;cube(x,y,.35+(i%4)*.18,.5+(i%3)*.2,.15+(i%5)*.14,'#5d6565');}
+ cover.forEach(c=>cube(...c,'#898d87'));
+ for(let u of units){if(u.dead||u.team==='locust'&&!contact)continue;let c=u.team==='cog'?'#80afc5':'#c17c6c';cube(u.x,u.y,.7,.58,u.down?.32:1.55,c);if(!u.down){cube(u.x,u.y,.5,.51,1.95,'#849294');cube(u.x+.46,u.y,.8,.18,1.15,'#303a40');}}
+ polys.sort((a,b)=>a.depth-b.depth);for(let q of polys){g.fillStyle=q.c;g.beginPath();q.points.forEach((p,i)=>i?g.lineTo(...p):g.moveTo(...p));g.closePath();g.fill();}
+ g.textAlign='center';g.font='bold 10px system-ui';for(let u of units){if(u.dead||u.team==='locust'&&!contact)continue;let p=P(u.x,u.y,u.down?.5:2.6);g.fillStyle='#081923de';let width=g.measureText(u.name).width;g.fillRect(p[0]-width/2-5,p[1]-15,width+10,16);g.fillStyle=u.team==='cog'?'#bde5f6':'#ffb4a4';g.fillText(u.name,p[0],p[1]-3);}
+ }
+ let prev=0;function loop(n){let dt=prev?Math.min(.08,(n-prev)/1000):0;prev=n;tick(dt);draw();requestAnimationFrame(loop);}reset();requestAnimationFrame(loop);
+}
 
-
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>X-Ray Live</title>
-
-  <style>
-
-    body {
-
-      background: #101820;
-
-      color: white;
-
-      text-align: center;
-
-      font-family: Arial;
-
-      padding: 60px 15px;
-
-    }
-
-    button {
-
-      background: #d6aa66;
-
-      padding: 18px 30px;
-
-      font-size: 18px;
-
-      border: none;
-
-      border-radius: 8px;
-
-    }
-
-  </style>
-
-</head>
-
-<body>
-
-  <h1>X-RAY LIVE</h1>
-
-  <p id="status">SYSTEM STANDBY</p>
-
-  <button id="deploy">DEPLOY X-RAY</button>
-
-  <script>
-
-    document.getElementById("deploy").onclick = function() {
-
-      document.getElementById("status").textContent =
-
-        "DEPLOYMENT SUCCESSFUL";
-
-      this.textContent = "X-RAY ONLINE";
-
-    };
-
-  </script>
-
-</body>
-
-</html>
+const canvas=$('world'),gl=canvas.getContext('webgl',{alpha:false,antialias:true,powerPreference:'high-performance'});if(!gl){fallback();return;}
+const vs=`attribute vec3 aP;attribute vec3 aC;uniform mat4 uM;uniform vec3 uEye;varying vec3 vC;varying float vDist;void main(){gl_Position=uM*vec4(aP,1.0);vC=aC;vDist=distance(aP,uEye);}`;
+const fs=`precision mediump float;varying vec3 vC;varying float vDist;void main(){float f=clamp((vDist-20.0)/90.0,0.0,.65);vec3 col=mix(vC,vec3(.15,.22,.26),f);gl_FragColor=vec4(col,1.0);}`;
+function shader(type,src){let s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s;}
+let pg=gl.createProgram();gl.attachShader(pg,shader(gl.VERTEX_SHADER,vs));gl.attachShader(pg,shader(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pg);if(!gl.getProgramParameter(pg,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(pg));gl.useProgram(pg);let posLoc=gl.getAttribLocation(pg,'aP'),colLoc=gl.getAttribLocation(pg,'aC'),mLoc=gl.getUniformLocation(pg,'uM'),eyeLoc=gl.getUniformLocation(pg,'uEye');gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);gl.clearColor(.08,.13,.17,1);
+const RAD=Math.PI/180, rand=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};let seed=1426;const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));function col(hex){hex=hex.replace('#','');return [parseInt(hex.slice(0,2),16)/255,parseInt(hex.slice(2,4),16)/255,parseInt(hex.slice(4,6),16)/255];}function tune(c,m){return c.map(v=>Math.min(1,v*m));}
+class Mesh{constructor(){this.d=[];}tri(a,b,c,color,lit=1){let q=tune(typeof color==='string'?col(color):color,lit);for(let p of [a,b,c])this.d.push(...p,...q);}quad(a,b,c,d,color,lit=1){this.tri(a,b,c,color,lit);this.tri(a,c,d,color,lit);}box(x,y,z,w,d,h,color){let X=x-w/2,Y=y-d/2,Z=z, xx=x+w/2,yy=y+d/2,zz=z+h;let v=[[X,Y,Z],[xx,Y,Z],[xx,yy,Z],[X,yy,Z],[X,Y,zz],[xx,Y,zz],[xx,yy,zz],[X,yy,zz]];this.quad(v[4],v[5],v[6],v[7],color,1.15);this.quad(v[0],v[1],v[5],v[4],color,.74);this.quad(v[1],v[2],v[6],v[5],color,.9);this.quad(v[2],v[3],v[7],v[6],color,.6);this.quad(v[3],v[0],v[4],v[7],color,.82);}
+cone(x,y,z,r,h,color,n=8){const c=typeof color==='string'?col(color):color;for(let i=0;i<n;i++){let q=2*Math.PI*i/n,p=2*Math.PI*(i+1)/n;this.tri([x+Math.cos(q)*r,y+Math.sin(q)*r,z],[x+Math.cos(p)*r,y+Math.sin(p)*r,z],[x,y,z+h],c,.8+i/n*.2);}}
+cylinder(x,y,z,r,h,color,n=8){let c=typeof color==='string'?col(color):color;for(let i=0;i<n;i++){let a=i*2*Math.PI/n,b=(i+1)*2*Math.PI/n;this.quad([x+Math.cos(a)*r,y+Math.sin(a)*r,z],[x+Math.cos(b)*r,y+Math.sin(b)*r,z],[x+Math.cos(b)*r,y+Math.sin(b)*r,z+h],[x+Math.cos(a)*r,y+Math.sin(a)*r,z+h],c,.68+.28*Math.cos(a));}}
+}
+function makeBuffer(mesh){let b=gl.createBuffer(),arr=new Float32Array(mesh.d);gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,arr,gl.STATIC_DRAW);return{b,n:arr.length/6};}let staticM=new Mesh();
+// Thick soot-dark roads, broken curbs, building ruins, street furniture and distant factories.
+staticM.box(0,0,-.4,95,67,.35,'#343e43');staticM.box(0,0,-.09,86,18,.08,'#383b3b');staticM.box(0,11,-.01,85,3,.13,'#85817b');staticM.box(0,-11,-.01,85,3,.13,'#85817b');
+for(let x=-38;x<40;x+=6){staticM.box(x,0,.018,2,.095,.025,'#a49a75');staticM.box(x,-8,.02,.7,.09,.025,'#9e9d93');staticM.box(x,8,.02,.7,.09,.025,'#9e9d93');}
+const buildings=[[-28,18,15,11,14],[-8,19,12,12,19],[14,18,13,10,12],[32,17,15,12,18],[-32,-20,17,12,13],[-8,-19,14,11,15],[16,-20,16,12,18],[34,-20,14,12,12]];
+for(let [x,y,w,d,h] of buildings){let material=rand()<.5?'#6e706c':'#616a6a';staticM.box(x,y,0,w,d,Math.max(3,h-5),material);staticM.box(x-w*.27,y,0,.7,d,h,'#858682');staticM.box(x+w*.31,y,0,.72,d,h*.81,'#747a78');staticM.box(x,y,0,w,.68,h*.67,'#777d79');let front=y>0?y-d/2-.37:y+d/2+.37;for(let floor=1;floor<h/3.7;floor++){for(let j=-1;j<=1;j++){staticM.box(x+j*w*.25,front,2+floor*3.1,1.4,.15,1.9,'#182b31');staticM.box(x+j*w*.25,front+.1*(y>0?1:-1),2+floor*3.1,1.6,.14,.13,'#858b83');}}for(let r=0;r<16;r++){let rx=x+(rand()-.5)*w*.9, ry=y+(rand()-.5)*d*.9;staticM.box(rx,ry,h-5,.5+rand()*2,.6+rand()*1.4,rand()*1.5,'#3f4748');}}
+// Cover and ruined barricades.
+let obstacles=[[-18,-2,3,1.8,1.35],[-13,3,3.7,1.8,1.3],[-5,-3,4,2,1.6],[5,3,4.5,1.7,1.5],[13,-3,4,2.3,1.25],[20,4,3.7,2.2,1.7]];
+for(let [x,y,w,d,h] of obstacles){staticM.box(x,y,0,w,d,h,'#6c706e');staticM.box(x,y,h,w+0.2,d+.16,.17,'#8c8b82');staticM.box(x-w/2,y,0,.18,d,h*.9,'#4d5b5d');}
+for(let i=0;i<190;i++){let x=(rand()-.5)*88,y=(rand()-.5)*30;if(Math.abs(y)<8&&Math.abs(x)<24&&rand()<.45)continue;staticM.box(x,y,0,rand()*1.5+.09,rand()*1.2+.08,rand()*.75,'#52595a');}
+for(let i=0;i<24;i++){let x=(rand()-.5)*70,y=(rand()-.5)*32;staticM.cylinder(x,y,0,.025,2+rand()*5,'#4c4d4d',6);}
+// Destroyed armored transport with chassis, cabin, and glowing warning lights.
+staticM.box(-24,-5,.25,6,2.5,1.6,'#485759');staticM.box(-25,-5,1.65,3.1,2.6,1.35,'#536268');staticM.box(-23.8,-6.35,1.35,1.4,.08,.5,'#17242a');for(let x of [-26,-22])for(let y of [-6.3,-3.7])staticM.cylinder(x,y,.12,.55,.64,'#171d1f',10);staticM.box(-21.4,-5,1.1,.2,1,.25,'#b45e42');
+for(let i=0;i<16;i++){let x=-30+i*4.5;staticM.box(x,(i%2?14:-14),.1,.15,.14,2+rand()*2,'#37474d');}
+const staticBuf=makeBuffer(staticM),dynamicBuf=gl.createBuffer();
+let troops=[],trails=[],seconds=0,old=0,lastAI=0,decisionAt=0,started=false,paused=true,contact=false,ended=false,round=0,orbit=.8,elev=.47,zoom=1,closeCam=false,sound=false,audio=null,logs=[];
+function tro(id,name,team,x,y){return{id,name,team,x,y,tx:x,ty:y,hp:20,ammo:team==='cog'?60:36,res:team==='cog'?240:108,stress:3,down:false,dead:false,bleed:0,move:0,shoot:0};}
+const unit=id=>troops.find(t=>t.id===id),live=team=>troops.filter(t=>t.team===team&&!t.down&&!t.dead),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),dice=n=>Math.ceil(Math.random()*n),nearCover=u=>obstacles.some(o=>Math.hypot(o[0]-u.x,o[1]-u.y)<o[2]/2+2.2);function clock(){let n=22320+Math.floor(seconds);return [Math.floor(n/3600),Math.floor(n/60)%60,n%60].map(x=>String(x).padStart(2,'0')).join(':');}
+function add(msg){logs.unshift({time:clock(),msg});$('log').innerHTML=logs.slice(0,14).map(e=>'<div class="entry"><span class="time">'+e.time+'</span>'+e.msg+'</div>').join('');}
+function reset(){troops=[tro('t','THOMAS','cog',-22,-1),tro('c','CADE','cog',-24,3),tro('s','SAYERS','cog',-20,4),tro('r','REDDICK','cog',-25,-3),tro('d1','DRONE A','locust',12,0),tro('d2','DRONE B','locust',15,-5),tro('d3','DRONE C','locust',21,3),tro('g','GRENADIER','locust',24,-3)];trails=[];seconds=0;lastAI=0;decisionAt=0;started=false;paused=true;contact=false;ended=false;round=0;logs=[];$('intro').classList.remove('hide');$('heading').textContent='AWAITING DEPLOYMENT';$('situation').textContent='Tap DEPLOY X-RAY. The battlefield will advance until Thomas must make a decision.';add('X-RAY STANDING BY.');update();}
+function enemyFor(u){return live(u.team==='cog'?'locust':'cog').sort((a,b)=>dist(u,a)-dist(u,b))[0];}
+function fire(u,v,suppress=false){if(!u||!v||u.down||v.down||u.dead||v.dead)return;if(u.ammo<3){add(u.name+' dry. No rounds to fire.');return;}u.ammo-=3;let r=dice(20),bonus=u.team==='cog'?3:2,dc=12+(nearCover(v)?2:0)+(dist(u,v)>31?2:0),hit=r===20||(r!==1&&r+bonus>=dc);u.shoot=.25;trails.push({x:u.x,y:u.y,z:1.5,tx:v.x,ty:v.y,tz:1.2,t:.35,color:u.team==='cog'?'#f5c982':'#ff695a'});if(suppress){v.stress=clamp(v.stress+2,0,10);add(u.name+' suppresses '+v.name+' ['+r+'+'+bonus+' vs '+dc+'].');return;}if(hit){let dmg=Math.max(1,dice(8)+2+(r===20?dice(8):0)-(v.team==='cog'?2:1));v.hp=Math.max(0,v.hp-dmg);v.stress=clamp(v.stress+1,0,10);add(u.name+' hits '+v.name+' for '+dmg+' ['+r+'+'+bonus+' vs '+dc+'].');if(v.hp===0){v.down=true;v.bleed=3;add(v.name+' IS DOWN.');}else if(dmg>=8)add(v.name+' suffers major trauma.');}else add(u.name+' misses '+v.name+' ['+r+'+'+bonus+' vs '+dc+'].');}
+function checkDone(){if(unit('t').down||live('locust').length===0||live('cog').length===0){ended=true;paused=true;$('heading').textContent='FIELD TEST COMPLETE';$('situation').textContent=unit('t').down?'Thomas is incapacitated. This test ends here.':live('locust').length?'X-Ray is combat ineffective.':'X-Ray secures the avenue.';add('TEST ENCOUNTER CONCLUDED.');}}
+function ai(){for(let u of troops)if(u.down&&!u.dead){u.bleed--;if(u.bleed<=0){u.dead=true;add(u.name+' KIA.');}}
+for(let u of troops){if(u.id==='t'||u.down||u.dead)continue;if(u.ammo<3){let n=Math.min(36,u.res);u.ammo+=n;u.res-=n;add(u.name+' reloads.');continue;}let foe=enemyFor(u);if(!foe)continue;if(Math.random()<.4){let dir=u.team==='cog'?1:-1;u.tx=clamp(u.x+dir*(1.3+Math.random()*2),-27,27);u.ty=clamp(u.y+(Math.random()-.5)*3,-7,7);}if(Math.random()<.62)fire(u,foe,Math.random()<.17);}checkDone();}
+function pause(txt){paused=true;$('heading').textContent='THOMAS · DECISION REQUIRED';$('situation').textContent=txt;$('command').disabled=false;$('submit').disabled=false;update();}
+function parseCommand(text){let t=text.toLowerCase().trim(),u=unit('t');if(!t)return false;const targets=live('locust'), target=targets.find(x=>t.includes(x.name.toLowerCase())||t.includes(x.id))||targets.find(x=>t.includes(x.name.split(' ')[1].toLowerCase()))||targets[0];let acted=false;
+if(/fire|shoot|engage|burst|kill|attack/.test(t)){if(target){fire(u,target);acted=true;}else add('No visible hostile target.');}
+else if(/suppress|pin|covering fire/.test(t)){if(target){fire(u,target,true);acted=true;}else add('No hostile contact to suppress.');}
+else if(/reload|magazine|mag change/.test(t)){let n=Math.min(60-u.ammo,u.res);u.ammo+=n;u.res-=n;add('Thomas reloads '+n+' rounds.');acted=true;}
+else if(/cover|duck|crouch|hide|advance|move|fall back|retreat|withdraw/.test(t)){let candidates=obstacles.filter(o=>Math.abs(o[0]-u.x)<20);let o=candidates.sort((a,b)=>Math.hypot(a[0]-u.x,a[1]-u.y)-Math.hypot(b[0]-u.x,b[1]-u.y))[0];if(/back|retreat|withdraw/.test(t)){u.tx=u.x-4;u.ty=u.y-1;add('Thomas withdraws to the rear.');}else if(o){u.tx=o[0]-2;u.ty=o[1];add('Thomas moves toward concrete cover.');}acted=true;}
+else if(/aid|help|medic|bandage|treat|stabili/.test(t)){let injured=troops.filter(x=>x.team==='cog'&&x.id!=='t'&&x.down&&!x.dead).sort((a,b)=>dist(a,u)-dist(b,u))[0];if(!injured){add('No incapacitated squadmate nearby.');acted=true;}else if(dist(injured,u)>2.7){u.tx=injured.x;u.ty=injured.y;add('Thomas moves toward '+injured.name+'.');acted=true;}else{let r=dice(20)+2;if(r>=14){injured.down=false;injured.hp=1;injured.bleed=0;add('Thomas stabilizes '+injured.name+' ['+r+' vs 14].');}else add('Medical attempt fails ['+r+' vs 14].');acted=true;}}
+else if(/hold|wait|observe|scan|look|listen|watch|stay/.test(t)){add('Thomas holds position and scans.');acted=true;}
+else if(/call|radio|shout|tell|order|say/.test(t)){add('Thomas calls to X-Ray: "'+text.replace(/[<>]/g,'').slice(0,70)+'".');acted=true;}
+if(!acted){$('situation').textContent='I can only simulate a limited set of commands in this prototype. Try fire, suppress, move to cover, reload, aid, hold, or shout.';return false;}
+return true;}
+function act(text){if(!started||!paused||ended)return;if(!parseCommand(text))return;round++;paused=false;decisionAt=seconds+5;$('command').disabled=true;$('submit').disabled=true;$('command').value='';$('heading').textContent='CONTACT · SIMULATION ACTIVE';$('situation').textContent='X-Ray and the Locust respond independently. The next decision will pause the action.';update();}
+$('deploy').addEventListener('click',()=>{started=true;paused=false;decisionAt=seconds+6;$('intro').classList.add('hide');$('heading').textContent='X-RAY ADVANCING';$('situation').textContent='Watch the squad advance. Gunfire may break out at any moment.';add('CADE: "Stay sharp. Check those rooftops."');for(let u of troops)if(u.team==='cog'){u.tx=u.x+3.4;u.ty=u.y;}update();});
+$('orders').addEventListener('submit',e=>{e.preventDefault();act($('command').value);});$('observe').addEventListener('click',()=>{if(!started)return;if(paused){act('hold position');}else{paused=true;pause('Thomas assesses the changing tactical situation.');}});$('reset').addEventListener('click',reset);
+$('camSwap').addEventListener('click',()=>{closeCam=!closeCam;update();});$('zoomIn').addEventListener('click',()=>{zoom=clamp(zoom*.83,.45,2.3);});$('zoomOut').addEventListener('click',()=>{zoom=clamp(zoom*1.2,.45,2.3);});let pt=null,pinch=null;canvas.addEventListener('pointerdown',e=>{canvas.setPointerCapture(e.pointerId);pt={x:e.clientX,y:e.clientY};});canvas.addEventListener('pointermove',e=>{if(!pt)return;orbit+=(e.clientX-pt.x)*.007;elev=clamp(elev-(e.clientY-pt.y)*.003,.14,1.1);pt={x:e.clientX,y:e.clientY};});canvas.addEventListener('pointerup',()=>pt=null);canvas.addEventListener('pointercancel',()=>pt=null);
+$('mute').addEventListener('click',()=>{sound=!sound;$('mute').textContent=sound?'SOUND: ON':'SOUND: OFF';});
+function tick(dt){if(!started||paused||ended)return;seconds+=dt;for(let u of troops){u.shoot=Math.max(0,u.shoot-dt);if(u.down||u.dead)continue;let dx=u.tx-u.x,dy=u.ty-u.y,d=Math.hypot(dx,dy);if(d>.09){let m=Math.min(d,dt*1.6);u.x+=dx/d*m;u.y+=dy/d*m;u.move+=dt*10;}}
+trails=trails.filter(v=>(v.t-=dt)>0);
+if(!contact&&seconds>=3.2){contact=true;add('HAMMERBURST CONTACT — RUINED AVENUE!');add('CADE: "X-RAY, GET DOWN! RETURN FIRE!"');pause('Hammerburst fire erupts from the far barricade. Sayers takes cover. What does Thomas do?');return;}
+if(contact&&seconds>=lastAI+1.7){lastAI=seconds;ai();}if(contact&&!ended&&seconds>=decisionAt)pause('Gunfire rips through the street. X-Ray is moving independently. What does Thomas do?');update();}
+function update(){$('headerClock').innerHTML='FIELD TEST · '+(contact?'CONTACT':'PATROL')+'<br>'+clock();$('hp').textContent=unit('t').hp+'/20';$('ammo').textContent=unit('t').ammo+'/'+unit('t').res;$('stress').textContent=unit('t').stress+'/10';$('foes').textContent=contact?live('locust').length:'?';$('contact').textContent=!started?'● SECTOR QUIET':ended?'■ ENCOUNTER ENDED':contact?paused?'■ CONTACT / PAUSED':'● CONTACT / LIVE':'● PATROL / LIVE';$('state').textContent=ended?'COMPLETE':paused?'PAUSED':'LIVE';$('cameraMode').textContent=closeCam?'THOMAS FOLLOW CAM':'TACTICAL 3D';$('camtip').textContent=closeCam?'Close follow camera · Tap ◉ to switch':'Drag to orbit · ◉ close camera';$('round').textContent='DECISIONS '+round;}
+function vecSub(a,b){return a.map((x,i)=>x-b[i]);}function normalize(v){let l=Math.hypot(...v)||1;return v.map(x=>x/l);}function cross(a,b){return[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];}function dot(a,b){return a.reduce((s,x,i)=>s+x*b[i],0);}
+function lookAt(eye,at){let f=normalize(vecSub(at,eye)),r=normalize(cross(f,[0,0,1])),u=cross(r,f);return [r[0],u[0],-f[0],0,r[1],u[1],-f[1],0,r[2],u[2],-f[2],0,-dot(r,eye),-dot(u,eye),dot(f,eye),1];}function persp(fov,aspect,near,far){let f=1/Math.tan(fov/2);return[f/aspect,0,0,0,0,f,0,0,0,0,(far+near)/(near-far),-1,0,0,2*far*near/(near-far),0];}function mult(A,B){let o=new Array(16).fill(0);for(let c=0;c<4;c++)for(let r=0;r<4;r++)for(let k=0;k<4;k++)o[c*4+r]+=A[k*4+r]*B[c*4+k];return o;}
+function actorMesh(m,u,frame){let z=0,walking=Math.sin(u.move*2)*.12;let x=u.x,y=u.y,side=u.team==='cog',arm=side?'#586c75':'#6d6558',trim=side?'#98aeb4':'#99816e',light=side?'#78bed4':'#f28c67',metal=side?'#2e414d':'#403e39',gun='#20292a';if(u.down){m.box(x,y,.15,1.45,.7,.35,arm);m.box(x+.6,y,.14,.7,.6,.25,trim);return;}
+m.box(x-.22,y-.20,.02,.43,.46,.80,metal);m.box(x+.23,y+.2,.02,.43,.46,.80,metal);m.box(x-.22,y-.20,.65+walking*.5,.48,.48,.78,arm);m.box(x+.23,y+.2,.65-walking*.5,.48,.48,.78,arm);
+m.box(x,y,1.25,.89,.8,.88,arm);m.box(x+.09,y,1.51,.98,.84,.48,trim);m.box(x-.06,y,1.62,.48,.86,.15,light);m.box(x-.03,y-.59,1.49,.5,.35,.35,metal);m.box(x-.04,y+.58,1.49,.5,.35,.35,metal);
+m.box(x,y,2.15,.56,.52,.35,metal);m.box(x+.07,y,2.32,.48,.57,.18,trim);m.box(x+.1,y-.28,2.2,.3,.08,.12,side?'#9ccbd4':'#e1a185');m.box(x+.4,y,1.53,.86,.25,.24,gun);m.box(x+1.02,y,1.52,.67,.11,.09,'#21282b');m.box(x+.1,y-.53,1.1,.34,.28,.7,arm);m.box(x+.1,y+.53,1.1,.34,.28,.7,arm);
+if(u.shoot>0){m.cone(x+1.6,y,1.6,.15,.5,'#ffd883',7);m.cone(x+1.8,y,1.6,.1,.3,'#f5f2d2',6);}if(!side){m.cone(x-.23,y,2.32,.22,.32,'#7c6b5f',7);m.cone(x+.19,y,2.32,.22,.38,'#8a7969',7);}}
+function fit(){let r=canvas.getBoundingClientRect(),dpr=Math.min(1.6,window.devicePixelRatio||1);let w=Math.max(200,Math.round(r.width*dpr)),h=Math.max(200,Math.round(r.height*dpr));if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h);}return[w,h];}
+function render(){let[w,h]=fit(),center=closeCam?[unit('t').x+6,unit('t').y,1.9]:[-1,0,0],radius=closeCam?12*zoom:55*zoom,ex=center[0]+Math.cos(orbit)*radius*Math.cos(elev),ey=center[1]+Math.sin(orbit)*radius*Math.cos(elev),ez=center[2]+radius*Math.sin(elev);if(closeCam){ex=unit('t').x-7.5*zoom;ey=unit('t').y-7*zoom;ez=4+zoom*1.5;center=[unit('t').x+13,unit('t').y,1.7];}
+let eye=[ex,ey,ez],mat=mult(persp((closeCam?64:49)*RAD,w/h,.1,200),lookAt(eye,center));gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(pg);gl.uniformMatrix4fv(mLoc,false,new Float32Array(mat));gl.uniform3fv(eyeLoc,new Float32Array(eye));function drawBuf(b,n){gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.enableVertexAttribArray(posLoc);gl.enableVertexAttribArray(colLoc);gl.vertexAttribPointer(posLoc,3,gl.FLOAT,false,24,0);gl.vertexAttribPointer(colLoc,3,gl.FLOAT,false,24,12);gl.drawArrays(gl.TRIANGLES,0,n);}drawBuf(staticBuf.b,staticBuf.n);
+let d=new Mesh();for(let u of troops){if(u.dead||!contact&&u.team==='locust')continue;actorMesh(d,u,seconds);}
+for(let tr of trails){d.box((tr.x+tr.tx)/2,(tr.y+tr.ty)/2,1.5,.07,.07,.06,tr.color);}let arr=new Float32Array(d.d);gl.bindBuffer(gl.ARRAY_BUFFER,dynamicBuf);gl.bufferData(gl.ARRAY_BUFFER,arr,gl.DYNAMIC_DRAW);drawBuf(dynamicBuf,arr.length/6);
+const tags=$('labels');tags.innerHTML='';for(let u of troops){if(u.dead||!contact&&u.team==='locust')continue;let v=[u.x,u.y,2.9,1],clip=[0,0,0,0];for(let i=0;i<4;i++)for(let k=0;k<4;k++)clip[i]+=mat[k*4+i]*v[k];if(clip[3]<=0)continue;let sx=(clip[0]/clip[3]*.5+.5)*tags.clientWidth,sy=(-clip[1]/clip[3]*.5+.5)*tags.clientHeight;if(sx<0||sx>tags.clientWidth||sy<0||sy>tags.clientHeight)continue;let tag=document.createElement('span');tag.className='nametag '+(u.team==='locust'?'enemy ':'')+(u.down?'down':'');tag.textContent=u.name+(u.down?' · DOWN':'');tag.style.left=sx+'px';tag.style.top=sy+'px';tags.appendChild(tag);}
+}
+function loop(ms){let dt=old?clamp((ms-old)/1000,0,.1):0;old=ms;tick(dt);render();requestAnimationFrame(loop);}window.addEventListener('resize',fit);reset();requestAnimationFrame(loop);
+})();
+</script></body></html>
